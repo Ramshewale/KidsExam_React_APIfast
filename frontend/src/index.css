@@ -1,0 +1,36 @@
+:root {
+  /* Color Palette */
+  --bg-page: #FFFDF2;
+  --bg-card: #FFFFFF;
+  --bg-muted: #F2EFE5;
+  --bg-tab-active: #FFFDF2;
+
+  --color-primary: #007AFF;
+  --color-primary-hover: #0062D6;
+
+  --color-text-dark: #2C3539;
+  --color-text-secondary: #6B7280;
+  --color-text-muted: #71717A;
+
+  --border-color: #E5E2D8;
+
+  /* UI Spacing & Rounding */
+  --card-radius: 24px;
+  --input-radius: 14px;
+  --button-radius: 16px;
+
+  /* Shadows */
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-page);
+  color: var(--color-text-dark);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}

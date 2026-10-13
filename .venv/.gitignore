@@ -1,0 +1,25 @@
+# Environment variables & local secrets
+.env
+.env.local
+.env.production
+*.env
+
+# Python virtual environment & cache
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Node dependencies & build artifacts
+node_modules/
+dist/
+build/
+.npm
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
