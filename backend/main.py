@@ -5,6 +5,7 @@ from routers.exam_router import router as exam_router
 from routers.admin_router import router as admin_router
 from routers.academic_router import router as academic_router
 from routers import parent_router
+import os
 
 
 # Import all models to ensure complete SQLAlchemy metadata registration
@@ -19,10 +20,16 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="I'm Ready For Exam API", version="2.0")
 
-# Enable CORS for the Vite React frontend
+allowed_origins_env = os.getenv("ALLOWED_ORIGINS", "")
+origins = [origin.strip() for origin in allowed_origins_env.split(",") if origin.strip()]
+
+# Always allow localhost for local development
+if "http://localhost:5173" not in origins:
+    origins.append("http://localhost:5173")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=origins if allowed_origins_env else ["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
