@@ -2,6 +2,7 @@ from datetime import datetime
 from typing import List, Optional
 import enum
 from pydantic import BaseModel, Field
+from __future__ import annotations
 
 
 # Question status enum matching the database model
@@ -54,6 +55,10 @@ class ExamAnswerSubmission(BaseModel):
     question_id: int
     selected_answer: Optional[str] = None
 
+class QuestionSubmissionItem(BaseModel):
+    question_id: int
+    selected_answer: Optional[str] = None
+    time_spent_seconds: Optional[int] = 0
 
 class ExamSubmission(BaseModel):
     student_id: int
@@ -166,7 +171,4 @@ class ChapterCreate(BaseModel):
 class EntityRenameRequest(BaseModel):
     name: str = Field(..., min_length=2)
 
-class QuestionSubmissionItem(BaseModel):
-    question_id: int
-    selected_answer: Optional[str] = None
-    time_spent_seconds: Optional[int] = 0
+
