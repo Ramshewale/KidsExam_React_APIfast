@@ -1,12 +1,12 @@
 import re
 from typing import List, Optional
-from pydantic import BaseModel, EmailStr, Field, field_validator
+from pydantic import BaseModel, Field, field_validator
 
 
 # Parent Registration
 class ParentRegisterRequest(BaseModel):
     full_name: str
-    email: EmailStr
+    email: str
     password: str
 
 
