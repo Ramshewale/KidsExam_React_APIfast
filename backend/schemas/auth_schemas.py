@@ -12,7 +12,7 @@ class ParentRegisterRequest(BaseModel):
 
 # Login for Parent and Admin
 class EmailLoginRequest(BaseModel):
-    email: EmailStr
+    email: str
     password: str
 
 
