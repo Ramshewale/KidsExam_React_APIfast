@@ -12,6 +12,7 @@ from schemas.exam_schemas import (
 from schemas.exam_schemas import AdminQuestionCreate
 from models.user import Parent, Student
 from models.academic import AcademicClass
+from schemas.auth_schemas import ParentLicenseUpdate
 
 def _normalize_text(text: str) -> str:
     """Normalize text by lowering case, stripping extra whitespace and punctuation."""
