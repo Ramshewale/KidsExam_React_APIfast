@@ -1,8 +1,9 @@
+from __future__ import annotations
 from datetime import datetime
 from typing import List, Optional
 import enum
 from pydantic import BaseModel, Field
-from __future__ import annotations
+
 
 
 # Question status enum matching the database model
