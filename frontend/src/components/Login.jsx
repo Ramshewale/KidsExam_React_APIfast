@@ -132,7 +132,9 @@ export default function Login({ onAuthSuccess, onLoginSuccess }) {
       setErrorMsg(
         typeof detail === 'string'
           ? detail
-          : 'Operation failed. Please check your details and try again.'
+          : Array.isArray(detail)
+          ? detail[0]?.msg || 'Validation Error'
+          : err.response?.data?.message || 'Operation failed, please check the details and try again'
       );
     } finally {
       setIsLoading(false);
